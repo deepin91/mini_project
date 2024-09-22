@@ -1,36 +1,21 @@
-package com.example.mini_project.entity;
+package com.example.mini_project.dto;
 
-import jakarta.persistence.*;
-
-import java.io.Serializable;
 import java.time.LocalDateTime;
 
-@Entity
-@Table(name = "board")
-public class BoardEntity implements Serializable {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class BoardDto {
     private Integer bIdx;
-
     private String bTitle;
     private String bContents;
-
-    @ManyToOne
-    @JoinColumn(name = "b_writer", referencedColumnName = "user_id", insertable = false, updatable = false)
-    private UserEntity userEntity; // 'user_nickname' -> 'user_id'로 매핑 (외래 키 관계)
-
+    private String bWriter;
     private Integer bViews;
     private LocalDateTime bCreatedDt;
     private String bFile;
 
-    //외래키 관계 설정 : ManyToOne
 
     //Getter & Setter
     public Integer getBIdx() {
         return bIdx;
     }
-
     public void setBIdx(Integer bIdx) {
         this.bIdx = bIdx;
     }
@@ -38,7 +23,6 @@ public class BoardEntity implements Serializable {
     public String getBTitle() {
         return bTitle;
     }
-
     public void setBTitle(String bTitle) {
         this.bTitle = bTitle;
     }
@@ -46,23 +30,20 @@ public class BoardEntity implements Serializable {
     public String getBContents() {
         return bContents;
     }
-
     public void setBContents(String bContents) {
         this.bContents = bContents;
     }
 
-    public UserEntity getUserEntity() {
-        return userEntity;
+    public String getBWriter() {
+        return bWriter;
     }
-
-    public void setUserEntity(UserEntity userEntity) {
-        this.userEntity = userEntity;
+    public void setBWriter(String bWriter) {
+        this.bWriter = bWriter;
     }
 
     public Integer getBViews() {
         return bViews;
     }
-
     public void setBViews(Integer bViews) {
         this.bViews = bViews;
     }
@@ -70,17 +51,15 @@ public class BoardEntity implements Serializable {
     public LocalDateTime getBCreatedDt() {
         return bCreatedDt;
     }
-
     public void setBCreatedDt(LocalDateTime bCreatedDt) {
         this.bCreatedDt = bCreatedDt;
     }
 
-    public String getBImg() {
+    public String getBFile() {
         return bFile;
     }
-
-    public void setBImg(String bImg) {
-        this.bFile = bImg;
+    public void setBFile(String bFile) {
+        this.bFile = bFile;
     }
 
 }
