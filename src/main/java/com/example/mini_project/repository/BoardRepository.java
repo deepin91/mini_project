@@ -8,5 +8,6 @@ import java.util.List;
 public interface BoardRepository extends JpaRepository<BoardEntity, Integer> {
 
     // 제목으로 게시물 검색
-    List<BoardEntity> findByBTitleContaining(String title);
+//    List<BoardEntity> findByBTitleContaining(String title);
+    List<BoardEntity> findByBTitleContaining(String bTitle);
 }

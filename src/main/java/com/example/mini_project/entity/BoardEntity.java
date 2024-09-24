@@ -14,6 +14,7 @@ public class BoardEntity implements Serializable {
     private Integer bIdx;
 
     private String bTitle;
+//    private String bWriter;
     private String bContents;
 
     @ManyToOne
@@ -59,6 +60,8 @@ public class BoardEntity implements Serializable {
         this.userEntity = userEntity;
     }
 
+
+
     public Integer getBViews() {
         return bViews;
     }
@@ -75,12 +78,12 @@ public class BoardEntity implements Serializable {
         this.bCreatedDt = bCreatedDt;
     }
 
-    public String getBImg() {
+    public String getBFile() {
         return bFile;
     }
 
-    public void setBImg(String bImg) {
-        this.bFile = bImg;
+    public void setBImg(String bFile) {
+        this.bFile = bFile;
     }
 
 }
