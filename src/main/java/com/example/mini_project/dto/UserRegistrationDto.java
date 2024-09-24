@@ -1,9 +1,8 @@
 package com.example.mini_project.dto;
 
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Pattern;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
+
+import java.time.LocalDate;
 
 public class UserRegistrationDto {
 
@@ -43,3 +42,8 @@ public class UserRegistrationDto {
 //(?=.*[A-Z]): 적어도 하나의 대문자가 포함되어야 합니다.
 //(?=.*\\d): 적어도 하나의 숫자가 포함되어야 합니다.
 //.+: 기타 문자는 제한하지 않고, 모든 문자에 대해 매칭됩니다.
+// @Past(message = "생년월일은 과거 날짜여야 합니다.") 로도 사용 가능
+// private LocalDate birthDate;
+//
+// @Future(message = "계획된 날짜는 미래 날짜여야 합니다.")
+// private LocalDate eventDate;
