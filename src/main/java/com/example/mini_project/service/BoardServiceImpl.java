@@ -84,3 +84,4 @@ public class BoardServiceImpl implements BoardService {
 //                .collect(Collectors.toList());  // 변환된 DTO 리스트를 하나의 리스트로 수집해 반환.
 //    }
 //}
+// 위 내용과 비교해서 다시 한번 더 체크
